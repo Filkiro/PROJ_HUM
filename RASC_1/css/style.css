@@ -1,59 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,600..1000;1,600..1000&display=swap'); /*Fonte: Nunito*/
-
-@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap'); /*Fonte: Patrick Hand*/
-
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap'); /*Fonte: Lobster Two e Dancing Script*/
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Nunito:wght@600..1000&family=Patrick+Hand&display=swap'); /*Fontes: Lobster Two, Nunito, Patrick Hand*/
 
 body{
     font-family: "Nunito", sans-serif;
     margin: 0;
     background-color: rgb(250, 247, 200);
 
-    /* overflow: hidden; PROVISÓRIO */
-}
-
-nav h1{
-    text-align: center;
-    font-size: 40px;
-    margin: 0;
-    font-family: Lobster Two, cursive;
-    letter-spacing: 3px;
-}
-
-main {
-    display: grid;
-    grid-area: main;
-    margin: 20px 10px 10px 10px;
-    grid-template-columns: 1fr 4fr 1fr;
-    grid-template-rows: auto;
-    grid-template-areas: 
-        "note1 farol noteD"; /*Bugado, mas funciona*/
-    gap: 20px;
-    margin: 20px 10px 10px 10px;
-
-    button{
-        background-color: rgb(148, 194, 255);
-        padding: 6px;
-        border: 0;
-        font-size: 15px;
-        border-radius: 5px;
-        transition: .2s;
-        margin: 10px;
-        font-family: "Nunito", sans-serif;
-        font-weight: 700;
-    }
-    
-    button:hover{
-        background-color: rgb(179, 252, 150);
-        transition: 0.2s;
-    }
-
-    img{
-        height: 100%;
-        width: 100%;
-        max-width: 520px;
-        max-height: 520px;
-    }
+    /* overflow: hidden; Era pra ser provisório, mas né */
 }
 
 nav {
@@ -85,7 +37,59 @@ nav {
         background-color: rgb(179, 252, 150);
         transition: .2s;
     }
+
+    h1{
+        text-align: center;
+        font-size: 40px;
+        margin: 0;
+        font-family: Lobster Two, cursive;
+        letter-spacing: 3px;
+    }
 }
+
+main {
+    display: grid;
+    grid-area: main;
+    margin: 20px 10px 10px 10px;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "note1 farol noteD"; /*Bugado, mas funciona(eu odeio grid)*/
+    gap: 20px;
+    margin: 20px 10px 10px 10px;
+
+    h2, h3, h4{
+        font-size: 32px;
+        margin: 15px 0 15px 0;
+        font-family: Lobster Two;
+        font-weight: 400;
+    }
+
+    button{
+        background-color: rgb(148, 194, 255);
+        padding: 6px;
+        border: 0;
+        font-size: 15px;
+        border-radius: 5px;
+        transition: .2s;
+        margin: 10px;
+        font-family: "Nunito", sans-serif;
+        font-weight: 700;
+    }
+    
+    button:hover{
+        background-color: rgb(179, 252, 150);
+        transition: 0.2s;
+    }
+
+    img{
+        height: 100%;
+        width: 100%;
+        max-width: 520px;
+        max-height: 520px;
+    }
+}
+
 footer{
     background-color: rgb(241, 250, 215);
     text-align: center;
@@ -116,22 +120,20 @@ footer{
     }
 }
 
+#btn1, #btn2, #btn3{
+    cursor: pointer;
+}
+
 .site{
     display: grid;
     grid-template-rows: .1fr 5fr;
     grid-template-areas: "nav" "main";
 }
 
-
-
 .farol{
     margin: 10px auto;
     grid-column: 2 / 3;
     grid-area: farol;
-}
-
-#btn1, #btn2, #btn3{
-    cursor: pointer;
 }
 
 .noteD {
@@ -190,6 +192,13 @@ footer{
         font-style: italic;
         margin: 10px;
     }
+    li{
+        text-align: justify;
+        font-family: Patrick Hand, cursive;
+        margin: 10px;
+        font-size: 20px;
+        list-style: upper-roman;
+    }
 }
 
 .note1:hover, .note2:hover, .note3:hover {
@@ -202,9 +211,9 @@ footer{
 .note1.expandida, .note2.expandida, .note3.expandida {
     background-color: rgba(252, 252, 110, 0.905);
     height: 500px;
-    width: 500px;
-    max-width: 600px;
-    max-height: 600px;
+    width: 800px;
+    max-width: 800px;
+    max-height: 500px;
     position: absolute;
     top: 50%;
     left: 50%;
