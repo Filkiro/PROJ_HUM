@@ -1,9 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Nunito:wght@600..1000&family=Patrick+Hand&display=swap'); /*Fontes: Lobster Two, Nunito, Patrick Hand*/
+ /*Fontes: Lobster Two, Nunito, Patrick Hand*/
+
+@font-face {
+    font-family: "Nunito";
+    src: url(../fonts/Nunito/Nunito-VariableFont_wght.ttf);
+}
+@font-face{
+    font-family: "Lobster Two";
+    src: url(../fonts/Lobster_Two/LobsterTwo-Regular.ttf);
+}
+@font-face{
+    font-family: "Patrick Hand";
+    src: url(../fonts/Patrick_Hand/PatrickHand-Regular.ttf);
+}
 
 body{
     font-family: "Nunito", sans-serif;
     margin: 0;
-    background-color: rgb(250, 247, 200);
+    background-color: #f0e0c7;
 
     /* overflow: hidden; Era pra ser provisório, mas né */
 }
@@ -16,7 +29,7 @@ nav {
     text-align: center;
     justify-content: center;
 
-    background-color: rgb(241, 250, 215);
+    background-color: #FFF8E1;
     margin: 0;
     padding: 10px;
     box-shadow: 0px 10px 40px -20px;
@@ -24,7 +37,7 @@ nav {
     a{
         text-decoration: none;
         color: black;
-        background-color: rgb(148, 194, 255);
+        background-color: #FFAB91;
         padding: 8px;
         border-radius: 6px;
         margin: 5px;
@@ -34,7 +47,7 @@ nav {
         transition: .2s;
     }
     a:hover{
-        background-color: rgb(179, 252, 150);
+        background-color: #ffd991;
         transition: .2s;
     }
 
@@ -44,6 +57,7 @@ nav {
         margin: 0;
         font-family: Lobster Two, cursive;
         letter-spacing: 3px;
+        color: #422f28;
     }
 }
 
@@ -51,7 +65,7 @@ main {
     display: grid;
     grid-area: main;
     margin: 20px 10px 10px 10px;
-    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: auto;
     grid-template-areas: 
         "note1 farol noteD"; /*Bugado, mas funciona(eu odeio grid)*/
@@ -66,7 +80,7 @@ main {
     }
 
     button{
-        background-color: rgb(148, 194, 255);
+        background-color: #FFAB91;
         padding: 6px;
         border: 0;
         font-size: 15px;
@@ -78,20 +92,13 @@ main {
     }
     
     button:hover{
-        background-color: rgb(179, 252, 150);
+        background-color: #ffd991;
         transition: 0.2s;
-    }
-
-    img{
-        height: 100%;
-        width: 100%;
-        max-width: 520px;
-        max-height: 520px;
     }
 }
 
 footer{
-    background-color: rgb(241, 250, 215);
+    background-color: #FFF8E1;
     text-align: center;
     display: flex;
     justify-content: space-between;
@@ -108,14 +115,14 @@ footer{
         justify-self: end;
         text-decoration: none;
         color: black;
-        background-color: rgb(148, 194, 255);
+        background-color: #FFAB91;
         padding: 8px;
         border-radius: 6px;
         transition: .2s;
         margin: auto 30px auto 30px;
     }
     a:hover{
-        background-color: rgb(179, 252, 150);
+        background-color: #ffd991;
         transition: .2s;
     }
 }
@@ -128,12 +135,6 @@ footer{
     display: grid;
     grid-template-rows: .1fr 5fr;
     grid-template-areas: "nav" "main";
-}
-
-.farol{
-    margin: 10px auto;
-    grid-column: 2 / 3;
-    grid-area: farol;
 }
 
 .noteD {
@@ -151,13 +152,16 @@ footer{
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
     overflow: visible;
     height: 86.8vh;
-    width: 250px;
+    width: 37vh;
     max-height: 640px;
     grid-area: note1;
     margin: 10px;
     transform: rotate(1deg);
     border: 2px solid rgb(252, 252, 56);
     transition: transform 0.3s ease;
+
+    align-self: center;
+    justify-self: center;
 
     p{
         font-family: Patrick Hand, cursive;
@@ -176,14 +180,16 @@ footer{
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
     top: 50%;
     left: 50%;
-    transition: none;
     overflow: visible;
     height: 40vh;
-    width: 250px;
+    width: 37vh;
     max-height: 300px;
     transform: rotate(-1deg);
     border: 2px solid rgb(252, 252, 56);
     transition: transform 0.3s ease;
+
+    align-self: center;
+    justify-self: center;
 
     p{
         font-family: Patrick Hand, cursive;
@@ -200,8 +206,11 @@ footer{
         list-style: upper-roman;
     }
 }
-
-.note1:hover, .note2:hover, .note3:hover {
+.note1:hover{
+    transform: rotate(-2deg) scale(1.02); /* Leve rotação ao passar o mouse */
+    transition: transform 0.3s ease;
+}
+.note2:hover, .note3:hover {
     transform: rotate(2deg) scale(1.02); /* Leve rotação ao passar o mouse */
     transition: transform 0.3s ease;
     
@@ -218,7 +227,7 @@ footer{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); 
-    transition: height 0.3s ease, width 0.3s ease;
+    transition: height .3s ease, width .3s ease;
     z-index: 1000;
     opacity: 1;
     border-radius: 10px;
@@ -260,15 +269,24 @@ footer{
 
 /* Ajuste de layout */
 .farol {
-    position: relative;
-    display: flex;
-    justify-content: center;
+    display: grid;
     align-items: center;
+    justify-content: center;
+    width: 90%;
+    height: 90%;
+    margin: 10px auto;
+    grid-column: 2 / 3;
+    grid-area: farol;
 }
 
 .farol img {
     box-shadow: 6px 6px 10px 2px rgba(0, 0, 0, 0.3);
     transform: rotate(-1deg);
+
+    height: auto;
+    width: 100%;
+    max-width: 720px;
+    max-height: 520px;
 }
 
 .note1 .content, .note2 .content, .note3 .content {
