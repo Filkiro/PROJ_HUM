@@ -14,6 +14,10 @@
 }
 
 body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
     font-family: "Nunito", sans-serif;
     margin: 0;
     background-color: #f0e0c7;
@@ -70,7 +74,8 @@ main {
     grid-template-areas: 
         "note1 farol noteD"; /*Bugado, mas funciona(eu odeio grid)*/
     gap: 20px;
-    margin: 20px 10px 10px 10px;
+    min-height: 100vh;
+    flex: 1;
 }
 
 main h2, h3, h4{
@@ -141,8 +146,10 @@ footer a:hover{
     display: grid;
     grid-template-rows: 1fr 1fr;
     text-align: center;
+    align-items: center;
+    justify-items: center;
     grid-area: noteD;
-    max-height: 750px;
+    height: 100%;
     gap: 20px;
 }
 
@@ -151,17 +158,17 @@ footer a:hover{
     text-align: center;
     padding: 10px;
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
-    overflow: visible;
-    height: 94.4%;
-    width: 37vh;
+    height: 38em;
+    max-width: 500px;
     max-height: 740px;
+    min-width: 197px;
     grid-area: note1;
     margin: 10px;
     transform: rotate(1deg);
     border: 2px solid rgb(252, 252, 56);
-    transition: transform 0.3s ease;
+    transition: all .5s ease;
 
-    align-self: center;
+    align-self: flex-start;
     justify-self: center;
 
 }
@@ -182,15 +189,15 @@ footer a:hover{
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
     top: 50%;
     left: 50%;
-    overflow: visible;
-    height: 90%;
-    width: 37vh;
-    max-height: 300px;
+    height: 17em;
+    max-height: 420px;
+    max-width: 450px;
+    min-width: 240px;
     transform: rotate(-1deg);
     border: 2px solid rgb(252, 252, 56);
-    transition: transform 0.3s ease;
+    transition: all .5s ease;
 
-    align-self: center;
+    align-self: flex-start;
     justify-self: center;
 
 }
@@ -223,15 +230,15 @@ footer a:hover{
 /*PARTE EXPANDIDA*/
 .note1.expandida, .note2.expandida, .note3.expandida {
     background-color: rgba(252, 252, 110, 0.905);
-    height: 500px;
-    width: 800px;
+    height: 50em;
+    width: 70em;
     max-width: 800px;
     max-height: 500px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); 
-    transition: height .3s ease, width .3s ease;
+    transition: all .5s ease;
     z-index: 1000;
     opacity: 1;
     border-radius: 10px;
@@ -289,8 +296,8 @@ footer a:hover{
     transform: rotate(-1deg);
 
     width: 100%;
-    max-width: 720px;
-    max-height: 520px;
+    max-width: 630px;
+    max-height: 630px;
 }
 
 .note1 .content, .note2 .content, .note3 .content {

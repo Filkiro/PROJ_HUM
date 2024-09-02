@@ -51,3 +51,29 @@ document.addEventListener("DOMContentLoaded", function() {
         toggleOverlay(false);
     });
 });
+
+function toggleExpand(id, button) {
+    var box = document.getElementById(id);
+
+    // Remove a expansão de todas as outras caixas
+    boxes.forEach(function(otherBox) {
+        if (otherBox !== box) {
+            otherBox.classList.remove('expandida');
+            otherBox.querySelector("button").textContent = 'Mostrar Mais';
+        }
+    });
+
+    // Força a re-renderização para garantir a animação
+    box.classList.add('expandida');
+    requestAnimationFrame(() => {
+        box.classList.toggle('expandida');
+    });
+
+    // Alterna o texto do botão
+    const isExpanded = box.classList.contains('expandida');
+    button.textContent = isExpanded ? 'Mostrar Menos' : 'Mostrar Mais';
+
+    // Ativa/desativa o blur do fundo
+    const anyBoxExpanded = Array.from(boxes).some(b => b.classList.contains("expandida"));
+    toggleOverlay(anyBoxExpanded);
+}
