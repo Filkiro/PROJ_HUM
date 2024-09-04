@@ -13,6 +13,7 @@
     src: url(../fonts/Patrick_Hand/PatrickHand-Regular.ttf);
 }
 
+
 body{
     display: flex;
     flex-direction: column;
@@ -20,7 +21,7 @@ body{
 
     font-family: "Nunito", sans-serif;
     margin: 0;
-    background-color: #9cb38c;
+    background-color: #A9BA9D;
 
     /* overflow: hidden; Era pra ser provisório, mas né */
 }
@@ -34,7 +35,7 @@ nav {
     text-align: center;
     justify-content: center;
 
-    background-color: #869e75 ;
+    background-color: #93a283 ;
     margin: 0;
     padding: 10px;
     box-shadow: 0px 10px 40px -20px;
@@ -61,7 +62,7 @@ nav h1{
     text-align: center;
     font-size: 40px;
     margin: 0;
-    font-family: Lobster Two, cursive;
+    font-family: "Lobster Two", cursive;
     letter-spacing: 3px;
     color: #41362c;
 }
@@ -104,7 +105,7 @@ main button:hover{
 }
 
 footer{
-    background-color: #869e75;
+    background-color: #9eb289;
     text-align: center;
     display: flex;
     justify-content: space-between;
@@ -299,12 +300,13 @@ footer a:hover{
 .farol {
     display: grid;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
     width: 90%;
     height: 90%;
     margin: 10px auto;
     grid-column: 2 / 3;
     grid-area: farol;
+
 }
 
 .farol img {
@@ -314,6 +316,9 @@ footer a:hover{
     width: 100%;
     max-width: 630px;
     max-height: 630px;
+
+    align-self: flex-start;
+
 }
 
 .note1 .content, .note2 .content, .note3 .content {
