@@ -1,0 +1,165 @@
+@font-face {
+    font-family: "Nunito";
+    src: url(../fonts/Nunito/Nunito-VariableFont_wght.ttf);
+}
+@font-face{
+    font-family: "Orwell";
+    src: url(../fonts/Orwell/Orwell.ttf);
+}
+@font-face{
+    font-family: "Patrick Hand";
+    src: url(../fonts/Patrick_Hand/PatrickHand-Regular.ttf);
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    font-family: "Nunito", sans-serif;
+    margin: 0;
+    background-color: #A9BA9D;
+
+    /* overflow: hidden; Era pra ser provisório, mas né */
+}
+nav{
+    grid-area: nav;
+
+    display: flex;
+    gap: 10px;
+    text-align: center;
+    justify-content: space-between;
+
+    
+    background-color: #93a283;
+    margin: 0;
+    padding: 10px;
+    box-shadow: 0px 10px 40px -20px;
+}
+nav a{
+    text-decoration: none;
+    color: black;
+    background-color: #d2a880;
+    padding: 8px;
+    border-radius: 6px;
+    margin: 5px;
+    justify-self: center;
+    align-self: center;
+    left: 29vw;
+    transition: .2s;
+}
+nav a:hover{
+    background-color: #ffd991;
+    transition: .2s;
+}
+
+nav h1{
+    text-align: center;
+    font-size: 50px;
+    margin: 0;
+    font-family: Orwell, serif;
+    color: #422f28;
+
+    flex: 1;
+}
+h2{
+    text-align: center;
+    font-size: 45px;
+    font-family: Orwell, serif;
+    color: #422f28;
+    width: fit-content;
+    background-color: #93a283;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+
+    margin: 10.5rem;
+}
+.princti{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+}
+.conteudo{
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: center;
+}
+
+section{
+    background-color: #E5d2bb;
+
+    width: 17em;
+    height: 22em;
+    margin: 15px;
+    padding: 1%;
+
+    text-align: justify;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+    transition: .3s;
+}
+section p{
+    font-family: "Patrick Hand";
+    font-size: 22px;
+
+    color: #422f28;
+}
+
+.title{
+    text-align: center;
+    font-family: "Orwell";
+    font-size: 35px;
+
+    margin: 0;
+    color: #422f28;
+
+}
+
+section:hover{
+    transform: rotate(-1.5deg) scale(1.05);
+    transition: .3s;
+}
+
+main img{
+    width: 100%;
+    background-size: cover;
+    
+    object-fit: cover;
+    height: 400px;
+    position: absolute;
+
+    z-index: -1;
+}
+
+footer{
+    background-color: #93a283;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding: 10px;
+    box-shadow: 0px -14px 20px -20px;
+}
+    
+footer p{
+    margin: 10px 40px 10px 50px;
+    
+}
+
+footer a{
+    align-self: center;
+    justify-self: end;
+    text-decoration: none;
+    color: black;
+    background-color: #FFAB91;
+    padding: 8px;
+    border-radius: 6px;
+    transition: .2s;
+    margin: auto 30px auto 30px;
+}
+footer a:hover{
+    background-color: #ffd991;
+    transition: .2s;
+}
