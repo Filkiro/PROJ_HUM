@@ -1,12 +1,12 @@
- /*Fontes: Lobster Two, Nunito, Patrick Hand*/
+ /*Fontes: Orwell, Nunito, Patrick Hand*/
 
 @font-face {
     font-family: "Nunito";
     src: url(../fonts/Nunito/Nunito-VariableFont_wght.ttf);
 }
 @font-face{
-    font-family: "Lobster Two";
-    src: url(../fonts/Lobster_Two/LobsterTwo-Regular.ttf);
+    font-family: "Orwell";
+    src: url(../fonts/Orwell.ttf);
 }
 @font-face{
     font-family: "Patrick Hand";
@@ -60,10 +60,9 @@ nav a:hover{
 
 nav h1{
     text-align: center;
-    font-size: 40px;
+    font-size: 47px;
     margin: 0;
-    font-family: "Lobster Two", cursive;
-    letter-spacing: 3px;
+    font-family: "Orwell", cursive;
     color: #41362c;
 }
 
@@ -83,7 +82,7 @@ main {
 main h2, h3, h4{
     font-size: 32px;
     margin: 15px 0 15px 0;
-    font-family: Lobster Two;
+    font-family: Orwell;
     font-weight: 400;
 }
 
