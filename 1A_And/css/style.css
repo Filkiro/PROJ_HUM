@@ -29,13 +29,13 @@ body{
 nav {
     grid-area: nav;
 
-    display: grid;
-    grid-template-columns: .1fr .1fr 1fr .1fr .1fr;
-    gap: 30px;
+    display: flex;
+    gap: 10px;
     text-align: center;
-    justify-content: center;
+    justify-content: space-between;
 
-    background-color: #93a283 ;
+    
+    background-color: #93a283;
     margin: 0;
     padding: 10px;
     box-shadow: 0px 10px 40px -20px;
@@ -47,7 +47,7 @@ nav a{
     background-color: #d2a880;
     padding: 8px;
     border-radius: 6px;
-    margin: 5px;
+    margin: 10px;
     justify-self: center;
     align-self: center;
     left: 29vw;
@@ -61,9 +61,13 @@ nav a:hover{
 nav h1{
     text-align: center;
     font-size: 50px;
+    justify-self: center;
+    align-self: center;
     margin: 0;
     font-family: "Oswell", cursive;
     color: #41362c;
+
+    flex: 1;
 }
 
 main {
@@ -159,7 +163,7 @@ footer a:hover{
     text-align: center;
     padding: 10px;
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
-    height: 38em;
+    height: 40em;
     max-width: 500px;
     max-height: 740px;
     min-width: 270px;
@@ -189,7 +193,7 @@ footer a:hover{
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
     top: 50%;
     left: 50%;
-    height: 17em;
+    height: 18.2em;
     max-height: 420px;
     max-width: 450px;
     min-width: 240px;
@@ -300,8 +304,6 @@ footer a:hover{
     display: grid;
     align-items: center;
     justify-content: start;
-    width: 90%;
-    height: 90%;
     margin: 10px auto;
     grid-column: 2 / 3;
     grid-area: farol;
@@ -313,11 +315,18 @@ footer a:hover{
     transform: rotate(-1deg);
 
     width: 100%;
-    max-width: 630px;
-    max-height: 630px;
+    max-width: 600px;
+    max-height: 600px;
 
     align-self: flex-start;
+    justify-self: center;
 
+    transition: .3s;
+
+}
+.farol img:hover{
+    transition: .3s;
+    transform: rotate(1deg) scale(1.02);
 }
 
 .note1 .content, .note2 .content, .note3 .content {
