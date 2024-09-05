@@ -301,8 +301,6 @@ footer a:hover{
     display: grid;
     align-items: center;
     justify-content: start;
-    width: 90%;
-    height: 90%;
     margin: 10px auto;
     grid-column: 2 / 3;
     grid-area: farol;
