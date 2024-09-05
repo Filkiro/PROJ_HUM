@@ -5,7 +5,7 @@
     src: url(../fonts/Nunito/Nunito-VariableFont_wght.ttf);
 }
 @font-face{
-    font-family: "Orwell";
+    font-family: "Oswell";
     src: url(../fonts/Orwell.ttf);
 }
 @font-face{
@@ -60,9 +60,9 @@ nav a:hover{
 
 nav h1{
     text-align: center;
-    font-size: 47px;
+    font-size: 50px;
     margin: 0;
-    font-family: "Orwell", cursive;
+    font-family: "Oswell", cursive;
     color: #41362c;
 }
 
@@ -82,7 +82,7 @@ main {
 main h2, h3, h4{
     font-size: 32px;
     margin: 15px 0 15px 0;
-    font-family: Orwell;
+    font-family: Oswell;
     font-weight: 400;
 }
 
@@ -104,7 +104,7 @@ main button:hover{
 }
 
 footer{
-    background-color: #9eb289;
+    background-color: #93a283;
     text-align: center;
     display: flex;
     justify-content: space-between;
@@ -300,6 +300,8 @@ footer a:hover{
     display: grid;
     align-items: center;
     justify-content: start;
+    width: 90%;
+    height: 90%;
     margin: 10px auto;
     grid-column: 2 / 3;
     grid-area: farol;
