@@ -213,7 +213,6 @@
         max-width: 450px;
         min-width: 240px;
         transform: rotate(-1deg);
-        transform-origin: bottom right;
         transition: all .3s ease;
         color: #5f4c31;
         align-self: flex-start;
