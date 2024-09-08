@@ -236,11 +236,11 @@
     }
 
     .note1:hover{
-        transform: rotate(-2deg) scale(1.02); /* Leve rotação ao passar o mouse */
+        transform: rotate(-2deg) scale(1.02); 
         transition: transform 0.3s ease;
     }
     .note2:hover, .note3:hover {
-        transform: rotate(2deg) scale(1.02); /* Leve rotação ao passar o mouse */
+        transform: rotate(2deg) scale(1.02);
         transition: transform 0.3s ease;
         
     }
@@ -250,25 +250,25 @@
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%) scale(1); /* Centralizado e em escala */
-        width: 100%; /* Tamanho ajustável */
-        max-width: 800px; /* Limite para telas grandes */
+        transform: translate(-50%, -50%) scale(1);
+        width: 100%;
+        max-width: 800px; 
         height: auto;
         max-height: 800px;
         z-index: 1000;
-        transition: transform 0.5s ease, width 0.5s ease, height 0.5s ease; /* Suavidade ao expandir e contrair */
+        transition: transform 0.5s ease, width 0.5s ease, height 0.5s ease;
     }
     .note1.expandida{
         position: absolute;
         top: 50%;
         right: 50%;
-        transform: translate(50%, -50%) scale(1); /* Centralizado e em escala */
-        width: 100%; /* Tamanho ajustável */
-        max-width: 800px; /* Limite para telas grandes */
+        transform: translate(50%, -50%) scale(1); 
+        width: 100%; 
+        max-width: 800px; 
         height: auto;
         max-height: 800px;
         z-index: 1000;
-        transition: transform 0.5s ease, width 0.5s ease, height 0.5s ease; /* Suavidade ao expandir e contrair */
+        transition: transform 0.5s ease, width 0.5s ease, height 0.5s ease;
     }
     
         
@@ -413,24 +413,24 @@
             flex: 1;
         }
         .note1.expandida{
-            position: absolute; /* Fixado para garantir centralização em relação à tela */
+            position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(5%, -50%) scale(1); /* Centraliza a caixa na tela */
-            width: 90vw; /* Ajuste de largura proporcional à tela */
+            transform: translate(5%, -50%) scale(1);
+            width: 90vw;
             max-width: 450px;
-            max-height: 190vh; /* Altura proporcional à tela */
+            max-height: 190vh;
             z-index: 1000;
             transition: transform 0.5s ease, width 0.5s ease, height 0.5s ease;
         }
         .note2.expandida, .note3.expandida {
-            position: absolute; /* Fixado para garantir centralização em relação à tela */
+            position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%) scale(1); /* Centraliza a caixa na tela */
-            width: 90vw; /* Ajuste de largura proporcional à tela */
+            transform: translate(-50%, -50%) scale(1);
+            width: 90vw;
             max-width: 500px;
-            max-height: 970px; /* Altura proporcional à tela */
+            max-height: 970px;
 
             z-index: 1000;
             transition: transform 0.5s ease, width 0.5s ease, height 0.5s ease;
