@@ -23,7 +23,7 @@
         margin: 0;
         background-color: #A9BA9D;
 
-        /* overflow: hidden; Era pra ser provisório, mas né */
+        overflow-x: hidden;
     }
 
     nav {
@@ -89,6 +89,16 @@
         font-family: Orwell;
         font-weight: 400;
     }
+
+    h5{
+        font-size: 42px;
+        margin: 10px 0 10px 0;
+        text-align: center;
+        font-family: Orwell;
+        font-weight: 400;
+    }
+
+    
 
     main button{
         background-color: #d2a880;
@@ -169,17 +179,18 @@
         padding: 10px;
         box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
         height: 40em;
-        max-width: 550px;
+        max-width: 450px;
         max-height: 790px;
         min-width: 270px;
         grid-area: note1;
         margin: 10px;
-        transition: all .3s ease;
+        transition: transform 0.3s ease, width 0.5s ease, height 0.5s ease, top 0.5s ease, left 0.5s ease;
         transform: rotate(1deg);
         color: #5f4c31;
         align-self: flex-start;
         justify-self: center;
 
+        position: relative;
     }
 
     .note1 p{
@@ -202,6 +213,7 @@
         max-width: 450px;
         min-width: 240px;
         transform: rotate(-1deg);
+        transform-origin: bottom right;
         transition: all .3s ease;
         color: #5f4c31;
         align-self: flex-start;
@@ -234,55 +246,31 @@
     }
 
     /*PARTE EXPANDIDA*/
-    .note1.expandida{
-        background-color: #e5d2bb;
-        height: 90em;
-        width: 70em;
-        max-width: 800px;
-        max-height: 600px;
-        position: absolute;
-        margin: auto;
-        right: 30%;
-        transform: translate(20%, -0%);
-        transition: all .3s ease;
-        z-index: 1000;
-        border-radius: 10px;
-    }
-
-    .note2.expandida {
-        background-color: #e5d2bb;
-        height: 90em;
-        width: 70em;
-        max-width: 800px;
-        max-height: 600px;
-        position: absolute;
-        margin: auto;
-        top: 30%;
-        left: 45%;
-        transform: translate(-40%, -20%); 
-        transition: all .3s ease;
-        z-index: 1000;
-        opacity: 1;
-        border-radius: 10px;
-        backdrop-filter: blur(10px);
-
-    }
-    .note3.expandida{
-        background-color: #e5d2bb;
-        height: 90em;
-        width: 70em;
-        max-width: 800px;
-        max-height: 500px;
+    .note2.expandida, .note3.expandida {
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%); 
-        transition: transform .5s ease, width .5s ease, height .5s ease;
+        transform: translate(-50%, -50%) scale(1); /* Centralizado e em escala */
+        width: 100%; /* Tamanho ajustável */
+        max-width: 800px; /* Limite para telas grandes */
+        height: auto;
+        max-height: 800px;
         z-index: 1000;
-        opacity: 1;
-        border-radius: 10px;
-        backdrop-filter: blur(10px);
+        transition: transform 0.5s ease, width 0.5s ease, height 0.5s ease; /* Suavidade ao expandir e contrair */
     }
+    .note1.expandida{
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        transform: translate(50%, -50%) scale(1); /* Centralizado e em escala */
+        width: 100%; /* Tamanho ajustável */
+        max-width: 800px; /* Limite para telas grandes */
+        height: auto;
+        max-height: 800px;
+        z-index: 1000;
+        transition: transform 0.5s ease, width 0.5s ease, height 0.5s ease; /* Suavidade ao expandir e contrair */
+    }
+    
         
     .note1.expandida p, .note2.expandida p, .note3.expandida p{
         margin: 15px;
@@ -361,3 +349,93 @@
         display: none;
         z-index: 999; 
     }
+
+    .iframe-container {
+        display: none;
+        position: absolute;
+        left: 20%;
+        top: 10%;
+        height: 50em;
+        width: 70em;
+        max-width: 800px;
+        max-height: 700px;
+        background-color: #e5d2bb;
+        box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+        padding: 16px;
+        border-radius: 10px;
+        z-index: 1001;
+
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+    }
+    
+    .iframe-container iframe {
+        width: 30em;
+        height: 35em;
+        border: none;
+
+        
+    }
+    .iframe-container p{
+        font-family: "Patrick Hand";
+        font-size: 25px;
+        text-align: center;
+    }
+    
+    .iframe-container.visible {
+        display: flex;
+        flex-direction: column;
+    }
+
+    @media (orientation: portrait) {
+        body {
+            display: flex;
+            flex-direction: row;
+            min-height: 100vh;
+    
+            font-family: "Nunito", sans-serif;
+            margin: 0;
+            background-color: #A9BA9D;
+        }
+    
+        main {
+            display: grid;
+            grid-area: main;
+            margin: 20px 10px 10px 10px;
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-template-columns: 1fr;
+            grid-template-areas: 
+                "farol" "note1" "noteD"; /*Bugado, mas funciona(eu odeio grid)*/
+            gap: 20px;
+            min-height: 100vh;
+            position: relative;
+            flex: 1;
+        }
+        .note1.expandida{
+            position: absolute; /* Fixado para garantir centralização em relação à tela */
+            top: 50%;
+            left: 50%;
+            transform: translate(5%, -50%) scale(1); /* Centraliza a caixa na tela */
+            width: 90vw; /* Ajuste de largura proporcional à tela */
+            max-width: 450px;
+            max-height: 190vh; /* Altura proporcional à tela */
+            z-index: 1000;
+            transition: transform 0.5s ease, width 0.5s ease, height 0.5s ease;
+        }
+        .note2.expandida, .note3.expandida {
+            position: absolute; /* Fixado para garantir centralização em relação à tela */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(1); /* Centraliza a caixa na tela */
+            width: 90vw; /* Ajuste de largura proporcional à tela */
+            max-width: 500px;
+            max-height: 970px; /* Altura proporcional à tela */
+
+            z-index: 1000;
+            transition: transform 0.5s ease, width 0.5s ease, height 0.5s ease;
+
+            overflow-y: visible;
+        }
+    }
+    

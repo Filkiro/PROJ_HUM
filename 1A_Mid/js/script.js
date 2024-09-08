@@ -77,3 +77,16 @@ function toggleExpand(id, button) {
     const anyBoxExpanded = Array.from(boxes).some(b => b.classList.contains("expandida"));
     toggleOverlay(anyBoxExpanded);
 }
+const btnIframe = document.getElementById('btnIframe');
+const iframeBox = document.getElementById('iframeBox');
+const overlay = document.querySelector('.overlay');
+
+btnIframe.addEventListener('click', () => {
+    iframeBox.classList.add('visible');
+    overlay.style.display = 'block';
+});
+
+overlay.addEventListener('click', () => {
+    iframeBox.classList.remove('visible');
+    overlay.style.display = 'none';
+});
