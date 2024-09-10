@@ -352,18 +352,19 @@
     .iframe-container {
         display: none;
         position: absolute;
-        left: 20%;
-        top: 10%;
-        height: 50em;
-        width: 70em;
+        max-height: 50em;
+        max-width: 70em;
         max-width: 800px;
         max-height: 700px;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: 70%;
         background-color: #e5d2bb;
         box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
         padding: 16px;
         border-radius: 10px;
         z-index: 1001;
-
+    
         justify-content: center;
         align-items: center;
         align-content: center;
@@ -373,7 +374,7 @@
         width: 30em;
         height: 35em;
         border: none;
-
+        border-radius: 10px;
         
     }
     .iframe-container p{
