@@ -249,7 +249,7 @@
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%) scale(1);
+        transform: translate(-50%, -30%) scale(1);
         width: 100%;
         max-width: 800px; 
         height: auto;
@@ -261,7 +261,7 @@
         position: absolute;
         top: 50%;
         right: 50%;
-        transform: translate(50%, -50%) scale(1); 
+        transform: translate(50%, -30%) scale(1); 
         width: 100%; 
         max-width: 800px; 
         height: auto;
@@ -387,54 +387,121 @@
         flex-direction: column;
     }
 
-    @media (orientation: portrait) {
-        body {
-            display: flex;
-            flex-direction: row;
-            min-height: 100vh;
-    
-            font-family: "Nunito", sans-serif;
-            margin: 0;
-            background-color: #A9BA9D;
-        }
-    
-        main {
-            display: grid;
-            grid-area: main;
-            margin: 20px 10px 10px 10px;
-            grid-template-rows: 1fr 1fr 1fr;
-            grid-template-columns: 1fr;
-            grid-template-areas: 
-                "farol" "note1" "noteD"; /*Bugado, mas funciona(eu odeio grid)*/
-            gap: 20px;
-            min-height: 100vh;
-            position: relative;
-            flex: 1;
-        }
-        .note1.expandida{
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(5%, -50%) scale(1);
-            width: 90vw;
-            max-width: 450px;
-            max-height: 190vh;
-            z-index: 1000;
-            transition: transform 0.5s ease, width 0.5s ease, height 0.5s ease;
-        }
-        .note2.expandida, .note3.expandida {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(1);
-            width: 90vw;
-            max-width: 500px;
-            max-height: 970px;
+@media (max-width: 768px) {
+    /* Ajustando layout de navegação */
+    nav {
+        display: grid;
+        gap: 5px;
 
-            z-index: 1000;
-            transition: transform 0.5s ease, width 0.5s ease, height 0.5s ease;
+        grid-template-rows: 1fr .1fr .1fr .1fr .1fr;
+        grid-template-areas: "h1" "glos" "lang" "down" "btn";
 
-            overflow-y: visible;
-        }
+        justify-content: center;
     }
-    
+    #glos{
+        grid-area: glos;
+    }
+    #lang{
+        grid-area: lang;
+    }
+    #down{
+        grid-area: down;
+    }
+    #btnIframe{
+        grid-area: btn;
+    }
+
+    nav h1 {
+        grid-area: h1;
+        font-size: 35px;
+    }
+
+    nav a {
+        grid-area: resto;
+        font-size: 14px;
+        padding: 6px;
+        margin: 5px;
+    }
+
+    /* Ajustando a área principal */
+    main {
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "farol"
+            "note1"
+            "noteD";
+        gap: 15px;
+    }
+
+    .note1, .note2, .note3 {
+        width: 80%;
+        max-width: 80%;
+        height: auto;
+        max-height: none;
+        margin: 10px;
+    }
+
+    /* Ajustando o farol */
+    .farol img {
+        width: 100%;
+        max-width: 100%;
+        max-height: 400px;
+        height: auto;
+    }
+
+    /* Ajustes para as caixas expansíveis */
+    .note2.expandida {
+        width: 90%;
+        height: auto;
+        max-height: 1500px;
+        top: 10%;
+        left: 50%;
+        transform: translateX(-53%) scale(1);
+    }
+    .note1.expandida{
+        width: 90%;
+        height: auto;
+        max-height: 1500px;
+        transform: translateX(53%) scale(1);
+    }
+    .note3.expandida{
+        width: 90%;
+        height: auto;
+        max-height: 1500px;
+        top: 10%;
+        left: 50%;
+        transform: translate(-53%, 100%) scale(1);
+    }
+
+    /* Ajustando o tamanho das fontes */
+    h2, h3, h4 {
+        font-size: 24px;
+    }
+
+    h5 {
+        font-size: 32px;
+    }
+
+    /* Ajuste de botões */
+    main button {
+        font-size: 12px;
+        padding: 5px;
+    }
+
+    /* Caixa de Iframe */
+    .iframe-container {
+        left: 5%;
+        width: 90vw;
+        max-width: 100%;
+        top: 5%;
+        height: auto;
+        max-height: 90vh;
+    }
+
+    .iframe-container iframe {
+        width: 100%;
+        height: 50vh;
+    }
+}

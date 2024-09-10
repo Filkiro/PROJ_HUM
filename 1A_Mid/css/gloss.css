@@ -270,44 +270,116 @@ h5{
     font-weight: 400;
 }
 
-@media (orientation: portrait) {
-    .iframe-container {
-        display: none;
-        position: absolute;
-        max-width: 800px;
-        max-height: 700px;
-        width: 80%;
-        background-color: #e5d2bb;
-        box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
-        padding: 16px;
-        border-radius: 10px;
-        z-index: 1001;
-    
+@media screen and (max-width: 600px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+        overflow-x: hidden;
+    }
+
+    nav {
+        display: grid;
+        gap: 5px;
+
+        grid-template-rows: 1fr .1fr .1fr .1fr .1fr;
+        grid-template-areas: "h1" "volta" "lang" "down" "btn";
+
         justify-content: center;
-        align-items: center;
-        align-content: center;
     }
-    .iframe-container iframe {
-        max-width: 30em;
-        width: 100%;
-        height: 35em;
-        border: none;
-        border-radius: 10px;
-        
+    #volta{
+        grid-area: volta;
     }
-    nav{
+    #lang{
+        grid-area: lang;
+    }
+    #down{
+        grid-area: down;
+    }
+    #btnIframe{
+        grid-area: btn;
+    }
+
+    nav h1 {
+        grid-area: h1;
+        font-size: 35px;
+    }
+
+    nav a {
+        grid-area: resto;
+        font-size: 14px;
+        padding: 6px;
+        margin: 5px;
+    }
+
+    h2 {
+        font-size: 1.8em;
+        padding: 10px;
+        margin: 3em 0;
+        width: 90%;
+    }
+
+    .conteudo {
+        display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 0;
+        justify-content: center;
+        margin: 10px 0;
+        width: 100%;
     }
-    footer{
-        padding: 0;
+
+    section {
+        width: 70%;
+        height: 100%;
+        margin: 10px 0;
+        padding: 10px;
+        box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
     }
-    nav h1{
-        font-size: 3em;
-        width: 100vw;
+
+    section p {
+        font-size: 1em;
+        margin: 10px 0;
     }
-    body{
-        overflow-x: hidden;
+
+    main img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        position: absolute;
+    }
+
+    footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    footer p {
+        margin: 5px 0;
+    }
+
+    footer a {
+        margin: 5px;
+        padding: 8px;
+        width: 1    0%;
+        text-align: center;
+    }
+
+    .iframe-container {
+        width: 90%;
+        height: auto;
+        padding: 10px;
+        margin: 10px 0;
+    }
+
+    .iframe-container iframe {
+        width: 100%;
+        height: 300px;
+    }
+
+    h5 {
+        font-size: 1.6em;
     }
 }
