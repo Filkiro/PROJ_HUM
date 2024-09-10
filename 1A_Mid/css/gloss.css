@@ -10,9 +10,6 @@
     font-family: "Patrick Hand";
     src: url(../fonts/Patrick_Hand/PatrickHand-Regular.ttf);
 }
-html{
-    min-width: 550px;
-}
 
 body{
     display: flex;
@@ -270,13 +267,15 @@ h5{
     font-weight: 400;
 }
 
-@media screen and (max-width: 600px) {
+@media (max-width: 768px) {
     body {
         display: flex;
         flex-direction: column;
         padding: 0;
         margin: 0;
         overflow-x: hidden;
+
+        max-width: 768px;
     }
 
     nav {
@@ -314,10 +313,8 @@ h5{
     }
 
     h2 {
-        font-size: 1.8em;
-        padding: 10px;
-        margin: 3em 0;
-        width: 90%;
+        font-size: 1.3em;
+        margin: 1em;
     }
 
     .conteudo {
@@ -325,7 +322,7 @@ h5{
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        margin: 10px 0;
+        margin: 100px 0;
         width: 100%;
     }
 
@@ -343,10 +340,11 @@ h5{
     }
 
     main img {
-        width: 100%;
+        max-width: 100%;
         height: 200px;
         object-fit: cover;
         position: absolute;
+        min-width: 100px;
     }
 
     footer {

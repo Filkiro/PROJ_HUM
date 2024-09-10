@@ -464,7 +464,9 @@
         width: 90%;
         height: auto;
         max-height: 1500px;
-        transform: translateX(53%) scale(1);
+        top: 10%;
+        right: -50%;
+        transform: translateX(-52%) scale(1);
     }
     .note3.expandida{
         width: 90%;
