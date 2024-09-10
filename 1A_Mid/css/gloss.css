@@ -282,9 +282,11 @@ h5{
         display: grid;
         gap: 5px;
 
-        grid-template-rows: 1fr .1fr .1fr .1fr .1fr;
-        grid-template-areas: "h1" "volta" "lang" "down" "btn";
-
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas: 
+            "h1 h1 h1 h1" 
+            "volta lang down btn";
+        
         justify-content: center;
     }
     #volta{
