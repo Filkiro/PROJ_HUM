@@ -316,7 +316,7 @@ h5{
 
     h2 {
         font-size: 1.3em;
-        margin: 1em;
+        margin: 2.4em;
     }
 
     .conteudo {
@@ -324,7 +324,7 @@ h5{
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        margin: 100px 0;
+        margin: 70px 0 10px 0;
         width: 100%;
     }
 
