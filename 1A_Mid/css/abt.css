@@ -1,0 +1,209 @@
+    /*Fontes: Orwell, Nunito, Patrick Hand*/
+
+    @font-face {
+        font-family: "Nunito";
+        src: url(../fonts/Nunito/Nunito-VariableFont_wght.ttf);
+    }
+    @font-face{
+        font-family: "Orwell";
+        src: url(../fonts/Orwell/Orwell.ttf);
+    }
+    @font-face{
+        font-family: "Patrick Hand";
+        src: url(../fonts/Patrick_Hand/PatrickHand-Regular.ttf);
+    }
+
+
+    body{
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        min-width: 405px;
+
+        font-family: "Nunito", sans-serif;
+        margin: 0;
+        background-color: #A9BA9D;
+
+        overflow-x: hidden;
+    }
+
+    nav {
+        grid-area: nav;
+
+        display: flex;
+        gap: 10px;
+        text-align: center;
+        justify-content: space-between;
+
+        
+        background-color: #93a283;
+        margin: 0;
+        margin-bottom: 10px;
+        padding: 10px;
+        box-shadow: 0px 10px 40px -20px;
+    }
+
+    nav a{
+        text-decoration: none;
+        color: black;
+        background-color: #d2a880;
+        padding: 8px;
+        border-radius: 6px;
+        margin: 10px;
+        justify-self: center;
+        align-self: center;
+        left: 29vw;
+        transition: .2s;
+    }
+    nav a:hover{
+        background-color: #ffd991;
+        transition: .2s;
+    }
+
+    nav h1{
+        text-align: center;
+        font-size: 50px;
+        justify-self: center;
+        align-self: center;
+        margin: 0;
+        font-family: "Orwell", cursive;
+        color: #41362c;
+
+        flex: 1;
+    }
+    img{
+        margin-top: 10px;
+        width: 200px;
+        height: 200px;
+        border-radius: 100%;
+    }
+    section{
+        background-color: #E5d2bb;
+    
+        width: 23em;
+        height: 36em;
+        margin: 15px;
+        padding: 1%;
+    
+        transform: rotate(.1deg);
+        text-align: justify;
+        box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+        transition: .3s;
+    }
+    
+    section p{
+        font-family: "Patrick Hand";
+        font-size: 22px;
+        margin: 15px;
+    
+        color: #422f28;
+    }
+
+    section::before {
+        content: '';
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        background-color: rgb(197, 120, 120);
+        border-radius: 50%;
+        top: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+    }
+    
+    section::after {
+        content: '';
+        position: absolute;
+        width: 6px;
+        height: 20px;
+        box-shadow: 0px 4px 11px 3px rgba(0, 0, 0, 0.5);
+        background-color: rgba(0, 0, 0, 0.5);
+        top: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 999; 
+    }
+    section:hover{
+        transform: scale(1.05);
+        transition: .3s;
+    }
+    footer{
+        background-color: #93a283;
+        text-align: center;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+        padding: 10px;
+        box-shadow: 0px -14px 20px -20px;
+    }
+        
+    footer p{
+        margin: 10px 40px 10px 50px;
+        
+    }
+    .conteudo{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    
+        justify-content: center;
+    }
+    
+    .imag{
+        display: flex;
+        justify-content: center;
+    }
+    .title{
+        text-align: center;
+        font-family: "Orwell";
+        font-size: 45px;
+    
+        margin: 10px;
+        color: #422f28;
+    
+    }
+
+    .svg{
+        width: 22px;
+        height: 22px;
+    }
+
+    @media (max-width: 768px) {
+        body {
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+            margin: 0;
+            overflow-x: hidden;
+    
+            max-width: 768px;
+        }
+    
+        nav {
+            display: grid;
+            gap: 5px;
+    
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-areas: 
+                "h1 h1 h1" 
+                "volta lang down";
+            
+            justify-content: center;
+        }
+        nav h1 {
+            grid-area: h1;
+            font-size: 35px;
+        }
+        #volta{
+            grid-area: volta;
+        }
+        #lang{
+            grid-area: lang;
+        }
+        #down{
+            grid-area: down;
+        }
+
+    }

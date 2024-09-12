@@ -77,6 +77,14 @@ h2{
     margin: 2.5em;
 }
 
+h5{
+    font-size: 42px;
+    margin: 10px 0 10px 0;
+    text-align: center;
+    font-family: Orwell;
+    font-weight: 400;
+}
+
 section{
     background-color: #E5d2bb;
 
@@ -98,8 +106,36 @@ section p{
 
     color: #422f28;
 }
+section::before {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: rgb(197, 120, 120);
+    border-radius: 50%;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
 
-
+section::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 20px;
+    box-shadow: 0px 4px 11px 3px rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999; 
+}
+section:hover{
+    transform: rotate(-1.5deg) scale(1.05);
+    transition: .3s;
+}
 
 main img{
     width: 100%;
@@ -178,37 +214,6 @@ footer a:hover{
     height: 22px;
 }
 
-section::before {
-    content: '';
-    position: absolute;
-    width: 15px;
-    height: 15px;
-    background-color: rgb(197, 120, 120);
-    border-radius: 50%;
-    top: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-}
-
-section::after {
-    content: '';
-    position: absolute;
-    width: 6px;
-    height: 20px;
-    box-shadow: 0px 4px 11px 3px rgba(0, 0, 0, 0.5);
-    background-color: rgba(0, 0, 0, 0.5);
-    top: -5px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 999; 
-}
-section:hover{
-    transform: rotate(-1.5deg) scale(1.05);
-    transition: .3s;
-}
-
 .overlay {
     position: fixed;
     top: 0;
@@ -259,13 +264,6 @@ section:hover{
     display: flex;
     flex-direction: column;
 }
-h5{
-    font-size: 42px;
-    margin: 10px 0 10px 0;
-    text-align: center;
-    font-family: Orwell;
-    font-weight: 400;
-}
 
 @media (max-width: 768px) {
     body {
@@ -277,7 +275,6 @@ h5{
 
         max-width: 768px;
     }
-
     nav {
         display: grid;
         gap: 5px;
@@ -289,19 +286,7 @@ h5{
         
         justify-content: center;
     }
-    #volta{
-        grid-area: volta;
-    }
-    #lang{
-        grid-area: lang;
-    }
-    #down{
-        grid-area: down;
-    }
-    #btnIframe{
-        grid-area: btn;
-    }
-
+    
     nav h1 {
         grid-area: h1;
         font-size: 35px;
@@ -318,14 +303,8 @@ h5{
         font-size: 1.3em;
         margin: 2.4em;
     }
-
-    .conteudo {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        margin: 70px 0 10px 0;
-        width: 100%;
+    h5 {
+        font-size: 1.6em;
     }
 
     section {
@@ -367,6 +346,29 @@ h5{
         text-align: center;
     }
 
+    #volta{
+        grid-area: volta;
+    }
+    #lang{
+        grid-area: lang;
+    }
+    #down{
+        grid-area: down;
+    }
+    #btnIframe{
+        grid-area: btn;
+    }
+
+
+    .conteudo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 70px 0 10px 0;
+        width: 100%;
+    }
+
     .iframe-container {
         width: 90%;
         height: auto;
@@ -379,7 +381,5 @@ h5{
         height: 300px;
     }
 
-    h5 {
-        font-size: 1.6em;
-    }
+
 }

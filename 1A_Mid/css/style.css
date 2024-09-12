@@ -401,19 +401,7 @@
         
         justify-content: center;
     }
-    #glos{
-        grid-area: glos;
-    }
-    #lang{
-        grid-area: lang;
-    }
-    #down{
-        grid-area: down;
-    }
-    #btnIframe{
-        grid-area: btn;
-    }
-
+    
     nav h1 {
         grid-area: h1;
         font-size: 35px;
@@ -437,6 +425,33 @@
             "noteD";
         gap: 15px;
     }
+    h2, h3, h4 {
+        font-size: 24px;
+    }
+
+    h5 {
+        font-size: 32px;
+    }
+
+    /* Ajuste de botões */
+    main button {
+        font-size: 12px;
+        padding: 5px;
+    }
+
+    #glos{
+        grid-area: glos;
+    }
+    #lang{
+        grid-area: lang;
+    }
+    #down{
+        grid-area: down;
+    }
+    #btnIframe{
+        grid-area: btn;
+    }
+
 
     .note1, .note2, .note3 {
         width: 80%;
@@ -480,22 +495,6 @@
         transform: translate(-55%, 100%) scale(1);
     }
 
-    /* Ajustando o tamanho das fontes */
-    h2, h3, h4 {
-        font-size: 24px;
-    }
-
-    h5 {
-        font-size: 32px;
-    }
-
-    /* Ajuste de botões */
-    main button {
-        font-size: 12px;
-        padding: 5px;
-    }
-
-    /* Caixa de Iframe */
     .iframe-container {
         left: 0%;
         width: 90vw;
